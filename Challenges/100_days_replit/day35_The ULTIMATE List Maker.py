@@ -22,7 +22,7 @@ def edit(editTask, newTask):
 
 
 def remove(task):
-    if editTask in task_list:
+    if task in task_list:
         index = task_list.index(task)
         del task_list[index]
     else:

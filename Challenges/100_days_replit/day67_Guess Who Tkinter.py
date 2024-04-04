@@ -6,19 +6,15 @@ root.title("Guess Who?!")
 
 
 def show_image():
-    try:
-        name = entry.get()
-        file_path = name + ".png"
-        print(file_path)
-        if os.path.exists(file_path):
-            image = tk.PhotoImage(file=file_path)
-            image = image.subsample(2)
-            canvas.create_image(150, 150, image=image)
-        else:
-            raise FileNotFoundError("File not found")
-    except Exception as e:
-        entry.delete(0, tk.END)
-        entry.insert(0, str(e))
+    global image
+    name = entry.get()
+    file_path = name + ".png"
+    if os.path.exists(file_path):
+        image = tk.PhotoImage(file=file_path)
+        image = image.subsample(5)
+        canvas.itemconfig(container, image=image)
+    else:
+        raise FileNotFoundError("File not found")
 
 
 entry = tk.Entry(root)
@@ -27,7 +23,9 @@ entry.pack()
 button = tk.Button(root, text="Search", padx=20, pady=10, command=show_image)
 button.pack()
 
+image = None
 canvas = tk.Canvas(root, width=300, height=300)
 canvas.pack()
+container = canvas.create_image(150, 2, image=image)
 
 root.mainloop()

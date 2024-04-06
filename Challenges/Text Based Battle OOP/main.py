@@ -1,13 +1,17 @@
-from character import Character
+from character import Hero, Enemy
+from weapon import short_bow, iron_sword
 
-hero = Character(name="Hero", health=100, damage=5)
-enemy = Character(name="Enemy", health=100, damage=3)
+hero = Hero(name="Hero", health=100)
+hero.equip(iron_sword)
+enemy = Enemy(name="Enemy", health=100, weapon=short_bow)
 
 while True:
     hero.attack(enemy)
     enemy.attack(hero)
 
-    print(f"Health of {hero.name}: {hero.health}")
-    print(f"Enemy of {enemy.name}: {enemy.health}")
+    hero.health_bar.draw()
+    enemy.health_bar.draw()
 
-    input()
+    if input("Next? (Y/n)") == "n":
+        print("Game End!")
+        break

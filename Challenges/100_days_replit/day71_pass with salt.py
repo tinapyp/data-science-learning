@@ -2,7 +2,7 @@ from replit import db
 import random
 
 
-def hash_password(password: str, salt: str) -> int:
+def hash_password(password: str, salt: str) -> str:
     hash_password = f"{password}{salt}"
     hash_password = hash(password)
     return hash_password

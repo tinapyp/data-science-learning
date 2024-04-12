@@ -1,0 +1,33 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    background-image: url("../images/background.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  
+  h1, h2{
+    color: white;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  p{
+    color:white;
+    font-style: italic;
+    text-align: center;
+  }
+  
+  ul, li{
+    color: white;
+    text-align: center;
+  }
+  
+  img{
+    width: 125px;
+    height: 150px;
+    border-radius: 50%;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+  }

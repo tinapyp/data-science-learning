@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../static/css/style.css" rel="stylesheet" type="text/css">
+    <title>Simple Blog</title>
+</head>
+<body>
+    <hr>
+    <h1>tinapyp Blog</h1>
+
+    <form action="/logout" method="post">
+        <button type="submit">Logout</button>
+    </form>
+    <hr>
+    <hr>
+    <br><br>
+    <h2>Add New Post</h2>
+    <form action="/add-post" method="post">
+        <p>Tittle: <input type="text" name="title"></p>
+        <p>Date: <input type="date" name="date"></p>
+        <p>Article: <input type="text" name="article"></p>
+        <button type="submit">Save</button>
+    </form>
+    <div>
+        <hr>
+        {POST}
+    </div>
+</body>
+</html>

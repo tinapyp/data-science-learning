@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Simple Chat App</title>
+</head>
+<body>
+  <header><h1>You are Logged in as {Name}</h1></header>
+  <main>
+    <section>
+      <form action='/logout'>
+        <button type='submit'>Logout</button>
+      </form>
+    </section>
+    <section>
+      {Chat}
+    </section>
+    <section>
+      <form action='/add-chat' method='post'>
+        <label>Message: <input type='text' name='text'></label>
+        <button type='sumbit'>Send</button>
+      </form>
+    </section>
+  </main>
+</body>
+</html>

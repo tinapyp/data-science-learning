@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Music APp</title>
+</head>
+<body>
+    <h1>Tracks of the years</h1>
+    <section>
+        <form action="/" method="post">
+            <p>Artist: <input name='artist' type="text"></p>
+            <button type="submit">Go</button>
+        </form>
+    </section>
+    <section>
+        {% for track in tracks %}
+            <h2>{{ track.name }}</h2>
+            <audio controls>
+                <source src="{{ track.preview_url }}" type="audio/mpeg">
+            </audio>
+        {% endfor %}
+    </section>
+</body>
+</html>

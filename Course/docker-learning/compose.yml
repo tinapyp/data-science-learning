@@ -1,0 +1,10 @@
+services:
+  transformer-notebook:
+    container_name: learning-docker
+    build: .
+    ports:
+      - 8000:8888
+    environment:
+      - JUPYTER_TOKEN=sukasuka
+    volumes:
+      - ./:/home/jovyan/
